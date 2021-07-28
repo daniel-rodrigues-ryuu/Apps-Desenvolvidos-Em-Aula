@@ -5,11 +5,9 @@ import 'package:layout/Layout.dart';
 
 
 
-void main (){
+void main () => runApp(LayoutApp());
 
-}
-
-class MeuLayout extends StatelessWidget{
+class LayoutApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,5 +18,4 @@ class MeuLayout extends StatelessWidget{
       home: Layout(),
     );
   }
-
 }
