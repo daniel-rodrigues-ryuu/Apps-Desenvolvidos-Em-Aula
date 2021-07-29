@@ -13,7 +13,8 @@ class LayoutState extends State<Layout> {
       home: Scaffold(
         // Barra de Titulo
         appBar:new AppBar(
-          title: new Text("Layout Flutter"), 
+          title: new Text("Layout Flutter"),
+          backgroundColor: Colors.teal
         ),
 
         //menu lateral (Hamburguer)
@@ -23,15 +24,16 @@ class LayoutState extends State<Layout> {
             children: <Widget>[
               //cabeçalh do menu
               const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.teal),
+                //decoration: BoxDecoration(color: Colors.teal),
                 child: Text("irens do menu")
                 ),
               //item 1
               ListTile(
-                title: Text("Flutter"),
+                title: new Text("Flutter"),
                 subtitle: new Text("Tudo são widgets"),
                 leading: Icon(Icons.flash_on,
                 color: Colors.teal,
+                size: 32,
                 ),
                 trailing: Icon(Icons.keyboard_arrow_right),
                 onTap: () {
@@ -46,6 +48,7 @@ class LayoutState extends State<Layout> {
                 subtitle: new Text("E Facil"),
                 leading: Icon(Icons.mood,
                 color: Colors.tealAccent,
+                size: 32,
                 ),
                 trailing: Icon(Icons.keyboard_arrow_right),
                 onTap: () {
@@ -59,6 +62,7 @@ class LayoutState extends State<Layout> {
                 subtitle: new Text("quero cafe"),
                 leading: Icon(Icons.coffee,
                 color: Colors.brown[900],
+                size: 32,
                 //size: 32,
                 ), 
                 trailing: Icon(Icons.keyboard_arrow_right),
@@ -71,14 +75,18 @@ class LayoutState extends State<Layout> {
           ),
         ),
 
+
         //Corpo do App
-        body: new Center(
+       body: new Center(
           child: ElevatedButton(
+            
             onPressed: () {
               final snackBar = SnackBar(
                 content: new Text("Buenas, esta e uma snack bar"),
+                duration: new Duration(milliseconds: 2500),
+                behavior: SnackBarBehavior.floating,//fçutuante
                 action: SnackBarAction(
-                  label: "x",
+                  label: "ok",
                   onPressed: () {
                   //aqui vai o codigo
                   }
@@ -95,8 +103,9 @@ class LayoutState extends State<Layout> {
           items: [
             // Iconi home
             BottomNavigationBarItem(
-              icon: new Icon(Icons.home),
-              label: "Home"
+              icon: new Icon(Icons.home,  color: Colors.teal),
+              label: "Home",
+             
               ),
               //iconi Configurações
             BottomNavigationBarItem(
